@@ -76,5 +76,38 @@ public:
             temp = temp->next;
         }
     }
+    bool isCircular()
+    {
+        /// SLow and fast pointers
+        if (head == NULL)
+            return false;
+        LinkedListNode<T>* slow = head;
+        LinkedListNode<T>* fast = head;
+        while (fast != NULL&& fast->next != NULL) {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+                return true;
+        }
+        return false;
+    }
+    void makeCircular(int pos)
+    {
+        /// To make Linked List CIrcular
+        /// join end to the position
+        LinkedListNode<T> *temp = head;
+        LinkedListNode<T>* nodeToJoin;
+        int i = 0;
+
+        while (temp->next != NULL) {
+            if (i == pos)
+                nodeToJoin = temp;
+            temp = temp->next;
+            i++;
+        }
+        temp->next = nodeToJoin;
+    }
+    
+
 };
 #endif

@@ -107,6 +107,31 @@ public:
         }
         temp->next = nodeToJoin;
     }
+    void swap(int pos1, int pos2)
+    {
+        if (head == NULL)
+            if (pos1 > pos2) {
+                /// Swap pos1 and pos2
+                pos1 = pos1 ^ pos2;
+                pos2 = pos1 ^ pos2;
+                pos1 = pos2 ^ pos1;
+            }
+        LinkedListNode<T> *prev1 = head, prev2 = head, temp, temp2;
+        for (int i = 0; i < pos1 - 1; i++)
+            prev1 = prev1->next;
+        for (int i = 0; i < pos2 - 1; i++)
+            prev2 = prev2->next;
+		temp = prev1->next->next;
+		prev1->next->next = prev2->next->next;
+		prev2->next->next = temp;
+		temp2= prev1->next;
+		prev1->next = prev2->next;
+		prev2->next = temp2;
+
+    }
+    int size() {
+        return s;
+    }
     
 
 };

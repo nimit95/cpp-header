@@ -56,7 +56,13 @@ class hashmap {
         delete [] oldbuckets;
   }
 public:
-    hashmap(int t=7, float l=0.7) {
+    hashmap(int t=7) {
+        ts = t;
+        cs = 0 ;
+        lf = 0.7;
+        buckets = new hashing::Node<T>*[t];
+    }
+    hashmap(int t, float l=0.7) {
         ts = t;
         cs = 0 ;
         lf = l ;

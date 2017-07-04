@@ -3,6 +3,10 @@ These are multipurpose header files. These can be used to implement data structu
 
 ### Getting started
 Download or clone the repository, copy the required header file to location of your program and then include the header file(s) in your program. Eg. #include "Hashmap.h"
+### Vector.h
+### Stack.h
+### Linkedlist.h
+### Trie.h
 ### Hashmap.h
 * Hashmaps are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys.  
 

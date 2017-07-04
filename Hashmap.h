@@ -95,6 +95,37 @@ public:
             cout<<endl;
         }
     }
-
+    void erase(string key) {
+        int i = hashFn(key);
+        hashing::Node<T> *temp = buckets[i];
+        hashing::Node<T> *prev = buckets[i];
+        if(!temp->key.compare(key)){
+            /// If the hashing::Node to delete is head
+            buckets[i] = temp->next;
+            return ;
+        }
+        temp = temp->next;
+        while(temp!=NULL) {
+            if(!temp->key.compare(key) ){
+                prev->next = temp->next;
+            return;
+        }
+        prev = temp;
+        temp = temp->next;
+        }
+  }
+    T& operator[](string key) {
+        T* temp = find(key);
+        if(temp==NULL) {
+    /// create a new hashing::Node;
+            T empty;
+            insert(key, empty);
+            return *find(key);
+        }
+        else {
+      /// return reference
+            return *temp;
+        }
+    }
 };
 #endif

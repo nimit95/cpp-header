@@ -132,7 +132,83 @@ public:
     int size() {
         return s;
     }
-    
+    ///At
+    // square brackets
+    ///reverse
+    T& operator[](int pos) {
+        if(pos>s) {
+            /// if pos is greater create nodes
+            for(int i=0;i<s-pos;i++)
+            {
+                LinkedListNode<T>* temp = new LinkedListNode<T>();
+                pushAtBack(temp);
+            }
+        }
+        return *at(pos);
+
+    }
+    T* at(int pos) {
+        if(pos>=s)
+            return NULL;
+        else {
+            LinkedListNode<T>* temp = head;
+            for(int i=0;i<pos;i++)
+                temp = temp->next;
+            return temp;
+        }
+    }
+    void reverse() {
+        head = rlist(head);
+    }
+    LinkedListNode<T>* reverse(LinkedListNode<T>* head) {
+        if(head==NULL||head->next==NULL)
+            return head;
+        LinkedListNode<T>* temp = reverse(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return temp;
+    }
+    void rotateRight(int pos) {
+        /// Rotating element ro the right;
+        LinkedListNode<T>* temp = head;
+        pos = pos % s ;
+        while(temp-->next!=NULL)
+            temp = temp->next;
+        temp->next = head;
+        temp = head;
+        for(int i=0;i<pos-1;i++)
+            temp = temp->next;
+        head = temp->next;
+        temp->next = NULL;
+    }
+    void erase(int pos) {
+        /// Delete an element
+        LinkedListNode<T>* temp;
+        if(pos>=s)
+            return ;
+        else if(pos==s-1)
+        {
+            at(pos-1)->next = NULL;
+            return;
+        }
+        temp = at(pos-1);
+        temp->next = temp->next->next;
+
+    }
+    LinkedListNode<T>* mergePoint(LinkedListNode<T>* head1, LinkedListNode<T>* head2) {
+        LinkedListNode<T>* temp1=head1;
+        LinkedListNode<T> *temp2=head2;
+        if(head1==NULL||head2==NULL)
+            return NULL;
+        while(head1!=head2) {
+            head1 = head1->next;
+            head2 = head2->next;
+            if(head1==NULL && head2==NULL) return NULL;
+            if(head1==NULL) head1 = temp2;
+            if(head2==NULL) head2 = temp1;
+        }
+        return head1;
+    }
 
 };
 #endif

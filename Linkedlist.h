@@ -30,23 +30,17 @@ public:
         head = NULL;
         s = 0;
     }
-    LinkedList(int* arr) {
-        //s = ve.size();
-        //for(int i:ve) {
-        //    cout<<i;
-            //pushAtFront(2);
-            //pushAtFront(3);
-        //}
-        int si = sizeof(arr)/sizeof(arr[0]);
-        cout<<si;
-        //for(int i=0;i<si;i++)
-        //    pushAtFront(arr[i]);
+    LinkedList(vector<T> ve) {
+        s = 0;
+        int temp = ve.size();
+        for(int i=temp-1;i>=0;i--)
+            pushAtFront(ve[i]);
+        //cout<<s;
     }
-    LinkedList(LinkedListNode<T>* root) {
-        head = root;
-    }
-    void pushAtBack(T data)
-    {
+    //LinkedList(LinkedListNode<T>* root) {
+//        head = root;
+//    }
+    void pushAtBack(T data) {
         if (head == NULL) {
             head = new LinkedListNode<T>(data);
             return;
@@ -59,8 +53,7 @@ public:
         }
         s++;
     }
-    void pushAtFront(T data)
-    {
+    void pushAtFront(T data) {
 
         LinkedListNode<T>* temp = new LinkedListNode<T>(data);
 
@@ -68,16 +61,16 @@ public:
         head = temp;
         s++;
     }
-    void print()
-    {
+    void print(){
         LinkedListNode<T>* temp = head;
-        while (temp != NULL) {
+        for(int i=0;i<s-1;i++) {
             cout << temp->val << " -> ";
             temp = temp->next;
         }
+        cout<<temp->val<<endl;
+        cout<<"Size is "<<s<<endl;
     }
-    bool isCircular()
-    {
+    bool isCircular(){
         /// SLow and fast pointers
         if (head == NULL)
             return false;
@@ -91,8 +84,7 @@ public:
         }
         return false;
     }
-    void makeCircular(int pos)
-    {
+    void makeCircular(int pos){
         /// To make Linked List CIrcular
         /// join end to the position
         LinkedListNode<T> *temp = head;
@@ -107,8 +99,7 @@ public:
         }
         temp->next = nodeToJoin;
     }
-    void swap(int pos1, int pos2)
-    {
+    void swap(int pos1, int pos2){
         if (head == NULL)
             if (pos1 > pos2) {
                 /// Swap pos1 and pos2
@@ -116,10 +107,10 @@ public:
                 pos2 = pos1 ^ pos2;
                 pos1 = pos2 ^ pos1;
             }
-        LinkedListNode<T> *prev1 = head, prev2 = head, temp, temp2;
-        for (int i = 0; i < pos1 - 1; i++)
+        LinkedListNode<T> *prev1 = head, *prev2 = head, *temp, *temp2;
+        for (int i = 0; i < pos1 - 2; i++)
             prev1 = prev1->next;
-        for (int i = 0; i < pos2 - 1; i++)
+        for (int i = 0; i < pos2 - 2; i++)
             prev2 = prev2->next;
 		temp = prev1->next->next;
 		prev1->next->next = prev2->next->next;
@@ -172,7 +163,7 @@ public:
         /// Rotating element ro the right;
         LinkedListNode<T>* temp = head;
         pos = pos % s ;
-        while(temp-->next!=NULL)
+        while(temp->next!=NULL)
             temp = temp->next;
         temp->next = head;
         temp = head;

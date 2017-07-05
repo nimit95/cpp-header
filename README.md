@@ -4,8 +4,41 @@ These are multipurpose header files. These can be used to implement data structu
 ### Getting started
 Download or clone the repository, copy the required header file to location of your program and then include the header file(s) in your program. Eg. #include "Hashmap.h"
 ### Vector.h
+#### Constructor
+* **Vector()**  -->  Default constructor. Makes an empty vector.
+
+* **Vector(int)** --> Allocates the given number of buckets in the hash table.
+* **Vector(int, T)** -->  Allocates the given number of buckets in the hash table and specify the load factor as a float value
+* **Vector(vector<T>)** -->
+#### Member Functons
+* **push_back(T)** --> insert a string key and value in the hashmap. Return type is void.
+* **find(string)** --> returns pointer to the value for the give key, if the key is not found return NULL.
+* **print()** --> prints all the keys in the hashmap.
+* **pop_back()** -->
+* **erase(string)** --> Erases the corresponding string and key value. Return type- void
+* **take_input(int,int)** -->
+* **size()** -->
+* **resize()** -->
+* **back()** -->
+* **capacity()** -->
+* **append()** -->
+* **operator[int]** --> [] can be used to access elements, replace values and add new value
+* **operator[:]** -->
+* **operator+** -->
+
 ### Stack.h
+#### Constructor
+* **Stack()**  -->  Default constructor. Makes an empty stack.
+
+#### Member Functons
+* **push(T)** --> insert a string key and value in the hashmap. Return type is void.
+* **pop()** --> returns pointer to the value for the give key, if the key is not found return NULL.
+* **top()** --> prints all the keys in the hashmap.
+* **size()** -->
+* **empty()** --> Erases the corresponding string and key value. Return type- void
+
 ### Linkedlist.h
+
 ### Trie.h
 ### Hashmap.h
 * Hashmaps are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys.  

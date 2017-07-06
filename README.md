@@ -32,6 +32,7 @@ Download or clone the repository, copy the required header file to location of y
 * **operator[:]** -->
 * **operator+** -->
 
+
 ### Stack.h
 #### Constructor
 * **Stack()**  -->  Default constructor. Makes an empty stack.
@@ -44,8 +45,31 @@ Download or clone the repository, copy the required header file to location of y
 * **empty()** --> Erases the corresponding string and key value. Return type- void
 
 ### Linkedlist.h
-
+#### Constructor
+* **LinkedList()**  -->  Default constructor. Makes an empty stack.
+* **LinkedList(vector<T>)** -->
+#### Member Functons
+* **pushAtBack(T)** --> insert a string key and value in the hashmap. Return type is void.
+* **pushAtFront()** --> returns pointer to the value for the give key, if the key is not found return NULL.
+* **isCircular()** --> prints all the keys in the hashmap.
+* **makeCircular()** -->
+* **swap()** --> Erases the corresponding string and key value. Return type- void
+* **size()** -->
+* **operator[]** -->
+* **at(int)** -->
+* **reverse()** -->
+* **rotateRight(int)** -->
+* **erase(int)**
+* **mergePoint(LinkedListNode<T>, LinkedListNode<T>)**
 ### Trie.h
+#### Constructor
+* **Trie()**  -->  Default constructor. Makes an empty stack.
+#### Member Functons
+* **insert(string)** --> insert a string key and value in the hashmap. Return type is void.
+* **isPresent(string)** --> returns pointer to the value for the give key, if the key is not found return NULL.
+* **top()** --> prints all the keys in the hashmap.
+
+
 ### Hashmap.h
 * Hashmaps are associative containers that store elements formed by the combination of a key value and a mapped value, and which allows for fast retrieval of individual elements based on their keys.  
 

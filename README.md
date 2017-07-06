@@ -4,11 +4,11 @@ These are multipurpose header files. These can be used to implement data structu
 ### Getting started
 Download or clone the repository, copy the required header file to location of your program and then include the header file(s) in your program. Eg. #include "Hashmap.h"
 ###### nimit.h is main header file which contains teh following header files(can be included seperately as well). Header files in it are as follows -
-* [Vector.h](#Vector.h)
-* [Stack.h](#Stack.h)
-* [Linkedlist.h](#Linkedlist.h)
-* [Trie.h](#Trie.h)
-* [Hashmap.h](#Hashmap.h)
+* [Vector.h](#vectorh)
+* [Stack.h](#stackh)
+* [Linkedlist.h](#linkedlisth)
+* [Trie.h](#trieh)
+* [Hashmap.h](#hashmaph)
 ### Vector.h
 #### Constructor
 * **Vector()**  -->  Default constructor. Makes an empty vector.

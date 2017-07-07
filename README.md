@@ -1,5 +1,5 @@
 # C++ Header File
-These are multipurpose header files. These can be used to implement data structures. Useful fuctions are included with each header file.
+These are multipurpose header files. These can be used to implement data structures. Useful functions are included with each header file.
 
 ### Getting started
 Download or clone the repository, copy the required header file to location of your program and then include the header file(s) in your program. Eg. #include "Hashmap.h"

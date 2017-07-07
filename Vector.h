@@ -35,7 +35,7 @@ public:
         /// Push element on the back
         if ((cs + 1) >= ts / 2) {
 
-            resize(2 * ts);
+            resize(ts);
             ts *= 2;
         }
         arr[cs] = data;
@@ -46,7 +46,7 @@ public:
         if (cs > 0)
             cs--;
         if (cs < ts / 4) {
-            resize(ts / 2);
+            resize(ts / 4);
             ts /= 2;
         }
     }
@@ -56,8 +56,8 @@ public:
     int size(){
         return cs;
     }
-    void resize(int cap){
-        T* newarr = new T[cap];
+    void resize(int newsize){
+        T* newarr = new T[2*newsize];
         for (int i = 0; i < cs; i++) {
             newarr[i] = arr[i];
         }

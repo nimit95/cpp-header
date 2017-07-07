@@ -110,6 +110,16 @@ public:
         // delete element
     }*/
     ///erase an element
+    void erase(int pos) {
+        int rpos;
+        if(pos<0)
+            rpos = cs-pos;
+        else
+            rpos = pos;
+        for(int i=rpos;i<cs-1;i++)
+            arr[i] = arr[i+1];
+        cs--;
+    }
     void append(vector<T> v) {
         for(int i=0;i<v.size();i++)
             push_back(v[i]);

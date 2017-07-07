@@ -151,6 +151,7 @@ public:
     void reverse() {
         head = rlist(head);
     }
+    
     LinkedListNode<T>* reverse(LinkedListNode<T>* head) {
         if(head==NULL||head->next==NULL)
             return head;
@@ -186,9 +187,10 @@ public:
         temp->next = temp->next->next;
 
     }
-    LinkedListNode<T>* mergePoint(LinkedListNode<T>* head1, LinkedListNode<T>* head2) {
-        LinkedListNode<T>* temp1=head1;
-        LinkedListNode<T> *temp2=head2;
+    template<typename S>
+    S* mergePoint(S* head1, S* head2) {
+        S* temp1=head1;
+        S *temp2=head2;
         if(head1==NULL||head2==NULL)
             return NULL;
         while(head1!=head2) {

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <algorithm>
 #ifndef VECTOR_H
 #define VECTOR_H
 using namespace std;
@@ -76,12 +77,20 @@ public:
         }
         return arr[pos];
     }
+
     Vector operator[](string s) {
         /// slice
-
-        while(token!=NULL) {
-
-        }
+        string a="", b="";
+        int i;
+        for(i=0;s[i]!=':';i++)
+            a =a + s[i];
+        i++;
+        for(;i<s.length();i++)
+            b = b + s[i];
+        Vector<T> temp = Vector<T>();
+        for(int i=stoi(a);i<stoi(b);i++)
+            temp.push_back((*this)[i]);
+        return temp;
     }
     void append(Vector<T> v) {
         for(int i=0;i<v.size();i++)
@@ -89,13 +98,14 @@ public:
     }
     Vector operator+(Vector<T> v) {
         /// append two vectors
-        Vector<T> temp = new Vector<T>(*this);
+        Vector<T> temp =Vector<T>(*this);
         temp.append(v);
         return temp;
     }
-/*    void sort() {
+    void sortVec() {
         ///  sort vvector
-    }
+        sort(arr,arr+cs);
+    }/*
     void splice() {
         // delete element
     }*/

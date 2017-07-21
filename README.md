@@ -1,9 +1,10 @@
 # C++ Header File
-These are multipurpose header files. These can be used to implement data structures. Useful functions are included with each header file.
-
+These are multipurpose header files. These can be used to implement data structures. Useful functions are included with each header file. Some of the header files works faster than internally implemented STL.
+### Requireents
+Your computer should have a working c++ compiler.
 ### Getting started
 Download or clone the repository, copy the required header file to location of your program and then include the header file(s) in your program. Eg. #include "Hashmap.h"
-###### nimit.h is main header file which contains teh following header files(can be included seperately as well). Header files in it are as follows -
+###### nimit.h is main header file which contains the following header files(can be included seperately as well). Header files in it are as follows -
 * [Vector.h](#vectorh)
 * [Stack.h](#stackh)
 * [Linkedlist.h](#linkedlisth)
@@ -15,22 +16,24 @@ Download or clone the repository, copy the required header file to location of y
 
 * **Vector(int)** --> Allocates the given number of buckets in the hash table.
 * **Vector(int, T)** -->  Allocates the given number of buckets in the hash table and specify the load factor as a float value
-* **Vector(vector<T>)** -->
+* **Vector(vector<T>)** --> Constructor of the class Vector and takes vector as a parameter.
 #### Member Functons
-* **push_back(T)** --> insert a string key and value in the hashmap. Return type is void.
-* **find(string)** --> returns pointer to the value for the give key, if the key is not found return NULL.
-* **print()** --> prints all the keys in the hashmap.
-* **pop_back()** -->
+* **append(vector<T> v)** --> Appends another vector of the same type T.
+* **append(Vector<T> v)** --> Appends another Vector of the same type T.
+* **back()** --> Returns reference to the last element of the vector.
+* **capacity()** --> Returns the size of the storage space currently allocated for the vector, expressed in terms of elements.
 * **erase(string)** --> Erases the corresponding string and key value. Return type- void
-* **take_input(int,int)** -->
-* **size()** -->
-* **resize()** -->
-* **back()** -->
-* **capacity()** -->
-* **append()** -->
+* **find(string)** --> Returns pointer to the value for the give key, if the key is not found return NULL.
+* **operator["start:end"]** --> Returns a sliced Vector from start to end
 * **operator[int]** --> [] can be used to access elements, replace values and add new value
-* **operator[:]** -->
-* **operator+** -->
+* **operator+** --> Returns a vector with both vectors appended Eg. v1 + v2  
+* **pop_back()** --> Pops the last element.
+* **print()** --> Prints all the keys in the hashmap.
+* **push_back(T)** --> Inserts a string key and value in the hashmap. Return type is void.
+* **resize()** --> Resizes the vector to the new size given as parameter.
+* **size()** --> Returns the size of the vector.
+* **sortVec()** --> sorts the vector.
+* **take_input(int start,int end)** --> Takes limits as parameter and input elements from (start-end).
 
 
 ### Stack.h
@@ -38,29 +41,29 @@ Download or clone the repository, copy the required header file to location of y
 * **Stack()**  -->  Default constructor. Makes an empty stack.
 
 #### Member Functons
-* **push(T)** --> insert a string key and value in the hashmap. Return type is void.
-* **pop()** --> returns pointer to the value for the give key, if the key is not found return NULL.
-* **top()** --> prints all the keys in the hashmap.
-* **size()** -->
+* **push(T)** --> Inserts an element at the top the stack.
+* **pop()** --> Remove an element from top of the stack.
+* **top()** --> Returns the element at the top.
+* **size()** --> Returns size of the vector.
 * **empty()** --> Erases the corresponding string and key value. Return type- void
 
 ### Linkedlist.h
 #### Constructor
 * **LinkedList()**  -->  Default constructor. Makes an empty stack.
-* **LinkedList(vector<T>)** -->
+* **LinkedList(vector<T>)** --> Creates linked list from a vector.
 #### Member Functons
-* **pushAtBack(T)** --> insert a string key and value in the hashmap. Return type is void.
-* **pushAtFront()** --> returns pointer to the value for the give key, if the key is not found return NULL.
+* **at(int)** -->
+* **erase(int)**
 * **isCircular()** --> prints all the keys in the hashmap.
 * **makeCircular()** -->
-* **swap()** --> Erases the corresponding string and key value. Return type- void
-* **size()** -->
+* **mergePoint(LinkedListNode<T>, LinkedListNode<T>)**
 * **operator[]** -->
-* **at(int)** -->
+* **pushAtBack(T)** --> insert a string key and value in the hashmap. Return type is void.
+* **pushAtFront()** --> returns pointer to the value for the give key, if the key is not found return NULL.
 * **reverse()** -->
 * **rotateRight(int)** -->
-* **erase(int)**
-* **mergePoint(LinkedListNode<T>, LinkedListNode<T>)**
+* **size()** -->
+* **swap()** --> Erases the corresponding string and key value. Return type- void
 ### Trie.h
 #### Constructor
 * **Trie()**  -->  Default constructor. Makes an empty stack.

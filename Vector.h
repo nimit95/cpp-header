@@ -96,6 +96,10 @@ public:
         for(int i=0;i<v.size();i++)
             push_back(v[i]);
     }
+    void append(vector<T> v) {
+        for(int i=0;i<v.size();i++)
+            push_back(v[i]);
+    }
     Vector operator+(Vector<T> v) {
         /// append two vectors
         Vector<T> temp =Vector<T>(*this);
@@ -120,10 +124,7 @@ public:
             arr[i] = arr[i+1];
         cs--;
     }
-    void append(vector<T> v) {
-        for(int i=0;i<v.size();i++)
-            push_back(v[i]);
-    }
+
     void print() {
         for(int i=0;i<cs;i++)
             cout<<arr[i]<<" ";
